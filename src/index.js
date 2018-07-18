@@ -8,6 +8,8 @@ import { BrowserRouter } from "react-router-dom";
 
 import { configureStore } from "./app/store/configureStore";
 
+import ScrollToTop from './app/common/util/ScrollToTop'
+
 const store = configureStore();
 
 const rootEl = document.getElementById("root");
@@ -15,7 +17,9 @@ let render = () => {
   ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
+      <ScrollToTop>
         <App />
+       </ScrollToTop> 
       </BrowserRouter>
     </Provider>,
     rootEl
